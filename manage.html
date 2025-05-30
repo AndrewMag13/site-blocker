@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Blocked Sites</title>
+  <link rel="stylesheet" href="manage.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Manage Blocked Sites</h1>
+      <div class="actions">
+        <button id="importBtn">Import Sites</button>
+        <button id="exportBtn">Export Sites</button>
+        <button id="refreshBtn">Refresh</button>
+      </div>
+    </div>
+    
+    <div id="loadingMessage">Loading blocked sites...</div>
+    <div id="errorMessage"></div>
+    <div id="emptyState">No sites are currently blocked.</div>
+    
+    <ul id="blockedSitesList"></ul>
+    
+    <div class="connect-link">
+      <p>Want to connect? <a href="https://taplink.cc/nailb" target="_blank">Find me here</a></p>
+    </div>
+    
+    <div id="notification"></div>
+  </div>
+  
+  <script src="manage.js"></script>
+</body>
+</html> 

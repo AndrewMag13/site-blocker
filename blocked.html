@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Blocked</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #e74c3c;
+      margin: 0 0 20px;
+    }
+    
+    #blockMessage {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    
+    .time-info {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    
+    .end-time {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    
+    .countdown {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #2c3e50;
+    }
+    
+    .motivational {
+      margin: 30px 0;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+    }
+    
+    .motivational p {
+      margin: 10px 0;
+      color: #2c3e50;
+      font-style: italic;
+    }
+
+    .connect-link {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+    }
+
+    .connect-link a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .connect-link a:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
+    
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #3498db;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Site Blocked</h1>
+    <p id="blockMessage">This site is blocked.</p>
+    <div id="timeInfo" class="time-info">
+      <p>Blocking ends at: <span id="endTime" class="end-time"></span></p>
+      <div class="countdown">
+        Time remaining: <span id="countdown"></span>
+      </div>
+    </div>
+    
+    <div class="motivational">
+      <p>Stay focused on what matters most. Every moment of productivity brings you closer to your goals.</p>
+      <p>Remember: Small steps lead to big achievements.</p>
+    </div>
+
+    <div class="connect-link">
+      <p>Want to connect? <a href="https://taplink.cc/nailb" target="_blank">Find me here</a></p>
+    </div>
+    
+    <button id="closeButton">Close</button>
+  </div>
+
+  <script src="blocked.js"></script>
+</body>
+</html> 

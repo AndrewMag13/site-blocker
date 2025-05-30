@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Site Blocker by time",
+    "version": "1.0",
+    "description": "Block websites with time-based restrictions and permanently.",
+    "permissions": [
+      "storage",
+      "tabs",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ],
+    "action": {
+      "default_popup": "sb.html",
+      "default_icon": {
+        "16": "sb16.png",
+        "32": "sb32.png",
+        "48": "sb48.png",
+        "128": "sb.png"
+      }
+    },
+    "icons": {
+      "16": "sb16.png",
+      "32": "sb32.png",
+      "48": "sb48.png",
+      "128": "sb.png"
+    },
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "web_accessible_resources": [{
+      "resources": [
+        "blocked.html",
+        "manage.html"
+      ],
+      "matches": ["<all_urls>"]
+    }]
+}

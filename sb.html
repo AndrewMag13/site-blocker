@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Blocker</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    .time-section {
+      margin-top: 10px;
+    }
+    
+    .time-inputs {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    select {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      background: #2196F3;
+      color: white;
+      font-weight: bold;
+    }
+    
+    button:hover {
+      opacity: 0.9;
+    }
+    
+    #notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      color: white;
+      display: none;
+    }
+    
+    #notification.show {
+      display: block;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .domain-input-group {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    
+    .domain-input-group input {
+      flex: 1;
+    }
+    
+    .domain-input-group button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <form id="blockForm">
+    <div class="form-group">
+      <label for="domain">Domain to block:</label>
+      <div class="domain-input-group">
+        <input type="text" id="domain" placeholder="example.com" required>
+        <button type="button" id="blockCurrentBtn">Use Current</button>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label>
+        <input type="checkbox" id="permanentBlock">
+        Block permanently
+      </label>
+    </div>
+    
+    <div id="timeSection" class="time-section">
+      <div class="form-group">
+        <label for="timePreset">Time preset:</label>
+        <select id="timePreset">
+          <option value="Work Hours (9:00 - 18:00)">Work Hours (9:00 - 18:00)</option>
+          <option value="Morning (8:00 - 12:00)">Morning (8:00 - 12:00)</option>
+          <option value="Afternoon (12:00 - 17:00)">Afternoon (12:00 - 17:00)</option>
+          <option value="Evening (17:00 - 22:00)">Evening (17:00 - 22:00)</option>
+          <option value="Night (22:00 - 8:00)">Night (22:00 - 8:00)</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+      
+      <div class="time-inputs">
+        <div>
+          <label for="startHour">Start:</label>
+          <select id="startHour"></select>
+          <select id="startMinute"></select>
+        </div>
+        <div>
+          <label for="endHour">End:</label>
+          <select id="endHour"></select>
+          <select id="endMinute"></select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button type="submit">Block Site</button>
+      <button type="button" id="manageBtn">Manage Sites</button>
+    </div>
+  </form>
+  
+  <div id="notification"></div>
+  
+  <script src="popup-script.js"></script>
+</body>
+</html>
